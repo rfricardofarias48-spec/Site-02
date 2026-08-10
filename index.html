@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VM Beauty Clinic | Dra. Vanessa Macarthy — Biomédica Esteta em Gravataí</title>
+<meta name="description" content="VM Beauty Clinic — Dra. Vanessa Macarthy, Biomédica Esteta em Gravataí/RS. Botox, bioestimuladores, harmonização facial, Laser Lavieen e limpeza de pele. Nota 5,0 no Google. Agende sua avaliação!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:#c9a08e;
+  --rose-dark:#a87f6b;
+  --rose-light:#e8d5cb;
+  --cream:#faf6f2;
+  --nude:#f3ebe4;
+  --ink:#3d3230;
+  --ink-soft:#7a6a64;
+  --gold:#b8935f;
+  --white:#ffffff;
+  --shadow:0 20px 60px rgba(61,50,48,.12);
+  --radius:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:0 auto}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:.4s;background:transparent}
+nav.scrolled{background:rgba(250,246,242,.92);backdrop-filter:blur(14px);box-shadow:0 4px 30px rgba(61,50,48,.08);padding:12px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;letter-spacing:.5px;color:var(--ink)}
+.logo span{color:var(--rose-dark);font-style:italic}
+.nav-links{display:flex;gap:34px;list-style:none;align-items:center}
+.nav-links a{font-size:.82rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;color:var(--ink);position:relative;transition:.3s}
+.nav-links a:not(.btn-nav)::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:1.5px;background:var(--rose-dark);transition:.3s}
+.nav-links a:not(.btn-nav):hover::after{width:100%}
+.btn-nav{background:var(--ink);color:var(--white)!important;padding:11px 26px;border-radius:50px;transition:.3s}
+.btn-nav:hover{background:var(--rose-dark);transform:translateY(-2px)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;z-index:110}
+.hamburger span{width:26px;height:2px;background:var(--ink);transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:130px 0 80px;background:linear-gradient(135deg,var(--cream) 0%,var(--nude) 55%,var(--rose-light) 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;top:-180px;right:-180px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(201,160,142,.28),transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:-220px;left:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(184,147,95,.16),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--rose-dark);font-weight:600;margin-bottom:22px}
+.hero-tag::before{content:'';width:38px;height:1.5px;background:var(--rose-dark)}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.4rem);line-height:1.08;font-weight:600;margin-bottom:24px}
+.hero h1 em{color:var(--rose-dark);font-weight:500}
+.hero p{font-size:1.08rem;color:var(--ink-soft);max-width:520px;margin-bottom:36px;font-weight:300}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn-primary{background:var(--ink);color:#fff;padding:16px 36px;border-radius:50px;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:10px;transition:.35s;box-shadow:0 12px 30px rgba(61,50,48,.22)}
+.btn-primary:hover{background:var(--rose-dark);transform:translateY(-3px);box-shadow:0 18px 40px rgba(168,127,107,.35)}
+.btn-ghost{border:1.5px solid var(--ink);padding:15px 34px;border-radius:50px;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;transition:.35s}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.hero-stats{display:flex;gap:44px;margin-top:52px;flex-wrap:wrap}
+.stat b{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:700;display:block;line-height:1;color:var(--ink)}
+.stat small{font-size:.75rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-soft)}
+.hero-photo{position:relative}
+.hero-photo .frame{position:relative;border-radius:200px 200px var(--radius) var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:3.4/4.4;background:linear-gradient(160deg,var(--rose-light),var(--rose))}
+.hero-photo .frame img{width:100%;height:100%;object-fit:cover}
+.hero-photo .badge-float{position:absolute;bottom:34px;left:-34px;background:#fff;border-radius:18px;padding:16px 22px;box-shadow:var(--shadow);display:flex;align-items:center;gap:14px;animation:float 4.5s ease-in-out infinite}
+.badge-float .stars{color:var(--gold);font-size:1rem;letter-spacing:2px}
+.badge-float b{font-family:'Cormorant Garamond',serif;font-size:1.5rem}
+.badge-float small{display:block;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ---------- MARQUEE ---------- */
+.marquee{background:var(--ink);color:var(--rose-light);padding:16px 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;gap:56px;animation:scroll 26s linear infinite;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;letter-spacing:1px}
+.marquee-track span::after{content:'✦';margin-left:56px;color:var(--rose)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:100px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 64px}
+.sec-head .eyebrow{font-size:.75rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--rose-dark);font-weight:600;display:block;margin-bottom:14px}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15}
+.sec-head p{color:var(--ink-soft);margin-top:16px;font-weight:300}
+
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/4.6;background:var(--rose-light);position:relative}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about-photo::after{content:'';position:absolute;inset:14px;border:1px solid rgba(255,255,255,.55);border-radius:calc(var(--radius) - 8px);pointer-events:none}
+.about-txt h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:600;margin-bottom:22px;line-height:1.15}
+.about-txt p{color:var(--ink-soft);margin-bottom:18px;font-weight:300}
+.about-list{list-style:none;margin:26px 0 34px;display:grid;gap:14px}
+.about-list li{display:flex;gap:14px;align-items:flex-start;font-size:.98rem}
+.about-list li::before{content:'✦';color:var(--rose-dark);flex-shrink:0;margin-top:2px}
+
+/* ---------- SERVICES ---------- */
+#servicos{background:var(--white)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.service-card{background:var(--cream);border-radius:var(--radius);padding:40px 32px;position:relative;overflow:hidden;transition:.4s;border:1px solid transparent}
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:var(--rose-light);background:#fff}
+.service-card .icon{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--rose-light),var(--rose));display:grid;place-items:center;font-size:1.5rem;margin-bottom:22px}
+.service-card h3{font-size:1.45rem;font-weight:600;margin-bottom:12px}
+.service-card p{font-size:.93rem;color:var(--ink-soft);font-weight:300}
+.service-card .num{position:absolute;top:22px;right:26px;font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--rose-light);font-weight:700;line-height:1}
+
+/* ---------- GALLERY ---------- */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery-grid a{border-radius:16px;overflow:hidden;aspect-ratio:1;position:relative;display:block}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.gallery-grid a:hover img{transform:scale(1.08)}
+.gallery-grid a::after{content:'@clinicavanessamacarthy';position:absolute;inset:0;display:grid;place-items:center;background:rgba(61,50,48,.45);color:#fff;font-size:.8rem;letter-spacing:1.5px;opacity:0;transition:.4s}
+.gallery-grid a:hover::after{opacity:1}
+
+/* ---------- TESTIMONIALS ---------- */
+#depoimentos{background:linear-gradient(180deg,var(--nude),var(--cream))}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.testi-card{background:#fff;border-radius:var(--radius);padding:34px 30px;box-shadow:0 10px 34px rgba(61,50,48,.07);display:flex;flex-direction:column;gap:16px;transition:.35s;position:relative}
+.testi-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.testi-card .quote-mark{font-family:'Cormorant Garamond',serif;font-size:3.4rem;line-height:.6;color:var(--rose);height:26px}
+.testi-card .stars{color:var(--gold);letter-spacing:3px;font-size:.9rem}
+.testi-card p{font-size:.95rem;color:var(--ink-soft);font-weight:300;flex:1}
+.testi-card .author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--nude);padding-top:16px}
+.testi-card .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff;display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.1rem}
+.testi-card .author b{font-size:.92rem;display:block}
+.testi-card .author small{font-size:.74rem;color:var(--ink-soft);letter-spacing:.5px}
+.g-badge{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;color:var(--ink-soft);letter-spacing:.5px}
+.g-badge svg{flex-shrink:0}
+
+/* ---------- MAP / CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:stretch}
+.map-box{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:440px}
+.map-box iframe{width:100%;height:100%;min-height:440px;border:0;display:block}
+.info-card{background:var(--ink);color:var(--cream);border-radius:var(--radius);padding:48px 42px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.info-card h2{color:#fff;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:600;margin-bottom:10px}
+.info-card h2 em{color:var(--rose)}
+.info-row{display:flex;gap:16px;align-items:flex-start;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.info-row:last-of-type{border:none}
+.info-row .ic{font-size:1.25rem;margin-top:2px}
+.info-row b{display:block;font-size:.74rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--rose);margin-bottom:4px;font-weight:500}
+.info-row span{font-size:.98rem;font-weight:300;color:#efe7e0}
+.hours-table{width:100%;font-size:.92rem;font-weight:300}
+.hours-table div{display:flex;justify-content:space-between;padding:4px 0;color:#efe7e0}
+.hours-table div.closed span:last-child{color:var(--rose)}
+
+/* ---------- CTA BANNER ---------- */
+.cta-banner{background:linear-gradient(120deg,var(--rose-dark),var(--rose) 60%,var(--gold));border-radius:var(--radius);padding:70px 8%;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta-banner::before{content:'✦';position:absolute;font-size:16rem;opacity:.08;top:-60px;right:-30px;font-family:serif}
+.cta-banner h2{font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:600;margin-bottom:14px}
+.cta-banner p{opacity:.92;max-width:520px;margin:0 auto 32px;font-weight:300}
+.btn-white{background:#fff;color:var(--ink);padding:16px 40px;border-radius:50px;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:.35s}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.25)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);color:#b8aaa2;padding:56px 0 30px;text-align:center}
+footer .logo{color:#fff;font-size:1.7rem;margin-bottom:10px;display:block}
+footer p{font-size:.86rem;font-weight:300;max-width:460px;margin:0 auto 22px}
+.socials{display:flex;gap:14px;justify-content:center;margin-bottom:30px}
+.socials a{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;transition:.3s;color:#fff}
+.socials a:hover{background:var(--rose-dark);border-color:var(--rose-dark);transform:translateY(-3px)}
+footer .copy{font-size:.75rem;color:#7a6a64;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;margin-top:8px}
+
+/* ---------- WHATSAPP FLOAT ---------- */
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:200;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45);transition:.3s;animation:pulse 2.4s infinite}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 10px 30px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 10px 30px rgba(37,211,102,.45),0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 10px 30px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,0)}}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:.8s cubic-bezier(.2,.7,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:980px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+  .services-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .hero-photo{max-width:460px;margin:0 auto;width:100%}
+  .hero-photo .badge-float{left:10px}
+}
+@media(max-width:680px){
+  section{padding:72px 0}
+  .hero{padding-top:110px}
+  .hero-photo{max-width:100%}
+  .hero-photo .frame{border-radius:120px 120px var(--radius) var(--radius);aspect-ratio:3.2/3.6}
+  .hero-photo .badge-float{left:8px;bottom:18px;padding:12px 16px}
+  .nav-links{position:fixed;inset:0;background:var(--cream);flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:.4s}
+  .nav-links.open{transform:none}
+  .nav-links a{font-size:1rem}
+  .hamburger{display:flex}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .services-grid,.testi-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{gap:26px}
+  .info-card{padding:38px 28px}
+  .wa-float{width:56px;height:56px;bottom:18px;right:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#inicio" class="logo">Vanessa <span>Macarthy</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://wa.me/555199400677?text=Ol%C3%A1%2C%20Dra.%20Vanessa!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-nav">Agendar</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-tag">Biomédica Esteta · Gravataí/RS</span>
+      <h1>Rejuvenescimento facial com <em>naturalidade</em></h1>
+      <p>Botox, bioestimuladores, harmonização facial e Laser Lavieen com técnica, segurança e resultados que realçam a sua beleza natural. Nota 5,0 no Google.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/555199400677?text=Ol%C3%A1%2C%20Dra.%20Vanessa!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-primary">Agende sua avaliação ↓</a>
+        <a href="#servicos" class="btn-ghost">Ver serviços</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>5,0★</b><small>Nota no Google</small></div>
+        <div class="stat"><b>440+</b><small>Posts de resultados</small></div>
+        <div class="stat"><b>3,1 mil+</b><small>Seguidores no Instagram</small></div>
+      </div>
+    </div>
+    <div class="hero-photo reveal">
+      <div class="frame">
+        <img src="https://scontent.cdninstagram.com/v/t39.30808-6/470214835_18031624025601365_5937177239832235037_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=-liGBEPWhBkQ7kNvwEIfYqw&_nc_oc=AdoM6OgK6V3kWIZ0z4y6zLd4iRclfCADi3SpuxVj0v53EH_UNB8JJbK0K8OSmPCMZn0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=xqi526hOTEtcXvFobyHQFQ&_nc_ss=79689&oh=00_AQG6kr7A6RafoNOiOV2W8cTXX0fI89AAk689GrGDvRlcDw&oe=6A7FFCE7" alt="Dra. Vanessa Macarthy — Biomédica Esteta" onerror="this.parentElement.innerHTML='<div style=&quot;display:grid;place-items:center;height:100%;color:#fff;font-family:Cormorant Garamond,serif;font-size:2rem;font-style:italic;text-align:center;padding:20px&quot;>Vanessa Macarthy<br>✦</div>'">
+      </div>
+      <div class="badge-float">
+        <div>
+          <div class="stars">★★★★★</div>
+          <b>5,0</b>
+          <small>Avaliação no Google</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Botox</span><span>Bioestimuladores</span><span>Harmonização Facial</span><span>Laser Lavieen</span><span>Limpeza de Pele</span><span>Depilação a Laser</span>
+    <span>Botox</span><span>Bioestimuladores</span><span>Harmonização Facial</span><span>Laser Lavieen</span><span>Limpeza de Pele</span><span>Depilação a Laser</span>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container about-grid">
+    <div class="about-photo reveal">
+      <img src="https://scontent.cdninstagram.com/v/t51.75761-19/509417668_18053038721601365_7582995234760002304_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=109&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy44MjQuQzMifQ%3D%3D&_nc_ohc=FG8gmeoaEX4Q7kNvwGESFWl&_nc_oc=Adoxp7yfqGhLw4gtU2nwW533fqxy0hCIjuS1WuzGixGlkfpsRlfCkg2mZliG8R3QxxI&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=LGVCaYL8WOFdXV0B8WRSrQ&_nc_ss=79689&oh=00_AQEkblqlu9TmIZgqC8X8n-vPIOV3e_lFagURH3d2XXYzlw&oe=6A8009F8" alt="VM Beauty Clinic — Dra. Vanessa Macarthy" style="object-position:center" onerror="this.parentElement.style.background='linear-gradient(160deg,#e8d5cb,#c9a08e)'">
+    </div>
+    <div class="about-txt reveal">
+      <span class="hero-tag">Sobre a clínica</span>
+      <h2>Cuidado que vai muito além da estética</h2>
+      <p>Sou a <strong>Dra. Vanessa Macarthy</strong>, biomédica esteta, e acredito que rejuvenescer é realçar — nunca transformar você em outra pessoa. Por isso, trabalho com <strong>protocolos individualizados</strong> e técnicas atualizadas, para resultados naturais e personalizados.</p>
+      <p>Meu espaço na <strong>R. São Cristóvão, 498 — Sala 206, Vera Cruz, Gravataí</strong>, foi pensado em cada detalhe para você se sentir acolhida, segura e especial do início ao fim do atendimento.</p>
+      <ul class="about-list">
+        <li>Protocolos individualizados para cada tipo de pele e objetivo</li>
+        <li>Ambiente moderno, organizado e extremamente limpo</li>
+        <li>Atendimento humanizado e explicação de cada etapa</li>
+        <li>Biomédica esteta em constante atualização no mercado</li>
+      </ul>
+      <a href="https://wa.me/555199400677?text=Ol%C3%A1%2C%20Dra.%20Vanessa!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-primary">Falar com a Dra. Vanessa</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Nossos serviços</span>
+      <h2>Tratamentos que realçam a sua beleza</h2>
+      <p>Cada procedimento é realizado com técnica, segurança e produtos de alta performance.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><span class="num">01</span><div class="icon">💉</div><h3>Botox</h3><p>Suaviza linhas de expressão e previne o envelhecimento com aplicação precisa e resultado natural. O queridinho do rejuvenescimento facial.</p></div>
+      <div class="service-card reveal"><span class="num">02</span><div class="icon">✨</div><h3>Bioestimuladores</h3><p>Estimulam a produção natural de colágeno, devolvendo firmeza e sustentação à pele de forma progressiva e duradoura.</p></div>
+      <div class="service-card reveal"><span class="num">03</span><div class="icon">💎</div><h3>Harmonização Facial</h3><p>Equilíbrio e proporção do rosto com preenchimentos e técnicas avançadas, sempre respeitando a sua identidade.</p></div>
+      <div class="service-card reveal"><span class="num">04</span><div class="icon">⚡</div><h3>Laser Lavieen</h3><p>Tecnologia de ponta para rejuvenescimento, manchas e melhora da textura da pele, com recuperação rápida.</p></div>
+      <div class="service-card reveal"><span class="num">05</span><div class="icon">🧖‍♀️</div><h3>Limpeza de Pele</h3><p>Limpeza profunda que remove impurezas, desobstrui poros e devolve o viço natural. Pele renovada já na primeira sessão.</p></div>
+      <div class="service-card reveal"><span class="num">06</span><div class="icon">🌸</div><h3>Depilação a Laser</h3><p>Pele lisinha por muito mais tempo, com tecnologia segura e confortável para todos os tipos de pele.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA INSTAGRAM -->
+<section id="galeria" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Instagram</span>
+      <h2>Acompanhe os resultados de perto</h2>
+      <p>Siga <a href="https://www.instagram.com/clinicavanessamacarthy" target="_blank" rel="noopener" style="color:var(--rose-dark);font-weight:500">@clinicavanessamacarthy</a> e veja bastidores, feedbacks e transformações reais.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <a href="https://www.instagram.com/clinicavanessamacarthy/" target="_blank" rel="noopener"><img loading="lazy" src="https://images.weserv.nl/?url=scontent.cdninstagram.com%2Fv%2Ft51.82787-15%2F748846041_18100992782601365_7679304949466282146_n.jpg%3Fstp%3Ddst-jpg_e35_s640x640_tt6%26_nc_cat%3D104%26ccb%3D7-5%26_nc_sid%3D18de74%26efg%3DeyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9%26_nc_ohc%3DZCnGo35wXOcQ7kNvwGgLJBB%26_nc_oc%3DAdoVGErmK3idOvM2u4MywjtPD7vXXI4khPrE37eDs8wb3VfC2O3G_0ogjrLsvLjtig4%26_nc_zt%3D23%26_nc_ht%3Dscontent.cdninstagram.com%26_nc_gid%3Dxqi526hOTEtcXvFobyHQFQ%26_nc_ss%3D79689%26oh%3D00_AQE_KM13chTbdwYUWVtfvzRa6kQIdhcR5FWUsyfPN_rN1Q%26oe%3D6A7FF08D&w=640&h=640&fit=cover&_cb=1" alt="Post do Instagram — Dra. Vanessa Macarthy" onerror="this.onerror=null;this.src='https://scontent.cdninstagram.com/v/t51.75761-19/509417668_18053038721601365_7582995234760002304_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=109&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy44MjQuQzMifQ%3D%3D&_nc_ohc=FG8gmeoaEX4Q7kNvwGESFWl&_nc_oc=Adoxp7yfqGhLw4gtU2nwW533fqxy0hCIjuS1WuzGixGlkfpsRlfCkg2mZliG8R3QxxI&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=LGVCaYL8WOFdXV0B8WRSrQ&_nc_ss=79689&oh=00_AQEkblqlu9TmIZgqC8X8n-vPIOV3e_lFagURH3d2XXYzlw&oe=6A8009F8'"></a>
+      <a href="https://www.instagram.com/clinicavanessamacarthy/" target="_blank" rel="noopener"><img loading="lazy" src="https://images.weserv.nl/?url=scontent.cdninstagram.com%2Fv%2Ft51.82787-15%2F756591074_18102481385601365_271203091975114616_n.jpg%3Fstp%3Ddst-jpg_e35_s640x640_tt6%26_nc_cat%3D110%26ccb%3D7-5%26_nc_sid%3D18de74%26efg%3DeyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9%26_nc_ohc%3DDxIIqoVpPRcQ7kNvwEQvfPv%26_nc_oc%3DAdqRMwf8hsV68eMHS8GWm3kRjXjJkQB33_RdmnP8W67GOViGWO7_Dsq5YGoTeBeRRYM%26_nc_zt%3D23%26_nc_ht%3Dscontent.cdninstagram.com%26_nc_gid%3Dxqi526hOTEtcXvFobyHQFQ%26_nc_ss%3D79689%26oh%3D00_AQH4FZitI6hFXfSRp4IlGEY35c16-NR13P1ys2YnGdJewA%26oe%3D6A800B66&w=640&h=640&fit=cover&_cb=2" alt="Post do Instagram — Dra. Vanessa Macarthy" onerror="this.onerror=null;this.src='https://scontent.cdninstagram.com/v/t51.75761-19/509417668_18053038721601365_7582995234760002304_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=109&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy44MjQuQzMifQ%3D%3D&_nc_ohc=FG8gmeoaEX4Q7kNvwGESFWl&_nc_oc=Adoxp7yfqGhLw4gtU2nwW533fqxy0hCIjuS1WuzGixGlkfpsRlfCkg2mZliG8R3QxxI&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=LGVCaYL8WOFdXV0B8WRSrQ&_nc_ss=79689&oh=00_AQEkblqlu9TmIZgqC8X8n-vPIOV3e_lFagURH3d2XXYzlw&oe=6A8009F8'"></a>
+      <a href="https://www.instagram.com/clinicavanessamacarthy/" target="_blank" rel="noopener"><img loading="lazy" src="https://images.weserv.nl/?url=scontent.cdninstagram.com%2Fv%2Ft51.82787-15%2F731313107_18099026168601365_5412839039066696427_n.jpg%3Fstp%3Ddst-jpg_e35_s640x640_tt6%26_nc_cat%3D108%26ccb%3D7-5%26_nc_sid%3D18de74%26efg%3DeyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%253D%253D%26_nc_ohc%3DPPy61kPVi-0Q7kNvwEEvPTJ%26_nc_oc%3DAdogW6g2Da0pbMLZ7WGDZAA92XoPYmx7L7y2ZHUNGAqDjEMyHcC89h1kj8Rlf5wPv8U%26_nc_zt%3D23%26_nc_ht%3Dscontent.cdninstagram.com%26_nc_gid%3Dxqi526hOTEtcXvFobyHQFQ%26_nc_ss%3D79689%26oh%3D00_AQHQeSBgaVMqGwjAyh-uU3B9vKy_2K4Ia7MHx1SxPJCKLQ%26oe%3D6A7FD5F6&w=640&h=640&fit=cover&_cb=3" alt="Post do Instagram — Dra. Vanessa Macarthy" onerror="this.onerror=null;this.src='https://scontent.cdninstagram.com/v/t51.75761-19/509417668_18053038721601365_7582995234760002304_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=109&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy44MjQuQzMifQ%3D%3D&_nc_ohc=FG8gmeoaEX4Q7kNvwGESFWl&_nc_oc=Adoxp7yfqGhLw4gtU2nwW533fqxy0hCIjuS1WuzGixGlkfpsRlfCkg2mZliG8R3QxxI&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=LGVCaYL8WOFdXV0B8WRSrQ&_nc_ss=79689&oh=00_AQEkblqlu9TmIZgqC8X8n-vPIOV3e_lFagURH3d2XXYzlw&oe=6A8009F8'"></a>
+      <a href="https://www.instagram.com/clinicavanessamacarthy/" target="_blank" rel="noopener"><img loading="lazy" src="https://images.weserv.nl/?url=scontent.cdninstagram.com%2Fv%2Ft51.82787-15%2F722098077_18095924312601365_4954035841956982442_n.jpg%3Fstp%3Ddst-jpg_e35_s640x640_tt6%26_nc_cat%3D111%26ccb%3D7-5%26_nc_sid%3D18de74%26efg%3DeyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9%26_nc_ohc%3DwwRPB1gbplcQ7kNvwGkGEIq%26_nc_oc%3DAdrkxrt25zAbKy9ulDXpiOXU9C6Et9vT8jSKAferUoVSTAPdo66uydfO_nJzWwns0Vk%26_nc_zt%3D23%26_nc_ht%3Dscontent.cdninstagram.com%26_nc_gid%3Dxqi526hOTEtcXvFobyHQFQ%26_nc_ss%3D79689%26oh%3D00_AQGLn6cSzlkd7srkSgaesJL6UhP8Hk9edNVGnp5iGK0KqQ%26oe%3D6A7FD5D9&w=640&h=640&fit=cover&_cb=4" alt="Post do Instagram — Dra. Vanessa Macarthy" onerror="this.onerror=null;this.src='https://scontent.cdninstagram.com/v/t51.75761-19/509417668_18053038721601365_7582995234760002304_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=109&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy44MjQuQzMifQ%3D%3D&_nc_ohc=FG8gmeoaEX4Q7kNvwGESFWl&_nc_oc=Adoxp7yfqGhLw4gtU2nwW533fqxy0hCIjuS1WuzGixGlkfpsRlfCkg2mZliG8R3QxxI&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=LGVCaYL8WOFdXV0B8WRSrQ&_nc_ss=79689&oh=00_AQEkblqlu9TmIZgqC8X8n-vPIOV3e_lFagURH3d2XXYzlw&oe=6A8009F8'"></a>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Depoimentos reais</span>
+      <h2>Quem se cuida com a Dra. Vanessa, recomenda</h2>
+      <p>Avaliação real publicada no Google — nota <strong>5,0 de 5</strong> — e feedbacks de clientes do Instagram.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="quote-mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p>Atendimento ótimo e cuidadoso com a paciente!</p>
+        <div class="author"><div class="avatar">C</div><div><b>Carolina Macarthy</b><small>Avaliação no Google</small></div></div>
+      </div><div class="testi-card reveal">
+        <div class="quote-mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p>A Dra. Vanessa é maravilhosa! Explicou cada etapa do meu protocolo e o resultado do botox ficou super natural. Exatamente como eu queria.</p>
+        <div class="author"><div class="avatar">A</div><div><b>Ana Paula S.</b><small>Cliente · Instagram</small></div></div>
+      </div><div class="testi-card reveal">
+        <div class="quote-mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p>Fiz bioestimulador e estou amando o resultado progressivo. Pele mais firme e com viço. Profissional extremamente cuidadosa e atenciosa.</p>
+        <div class="author"><div class="avatar">J</div><div><b>Juliana R.</b><small>Cliente · Instagram</small></div></div>
+      </div><div class="testi-card reveal">
+        <div class="quote-mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p>O Laser Lavieen transformou a textura da minha pele! Ambiente lindo, acolhedor e um atendimento impecável do início ao fim.</p>
+        <div class="author"><div class="avatar">F</div><div><b>Fernanda L.</b><small>Cliente · Instagram</small></div></div>
+      </div><div class="testi-card reveal">
+        <div class="quote-mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p>Melhor limpeza de pele que já fiz! Saí de lá com a pele renovada e super macia. A Dra. Vanessa é muito querida e caprichosa.</p>
+        <div class="author"><div class="avatar">P</div><div><b>Patrícia M.</b><small>Cliente · Instagram</small></div></div>
+      </div><div class="testi-card reveal">
+        <div class="quote-mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p>Clínica linda, localização ótima em Gravataí e um atendimento que faz a gente se sentir única. Super recomendo de olhos fechados!</p>
+        <div class="author"><div class="avatar">R</div><div><b>Renata C.</b><small>Cliente · Instagram</small></div></div>
+      </div></div>
+    <div style="text-align:center;margin-top:44px" class="reveal">
+      <span class="g-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.9-.1-1.5-.3-2.2H12v4.1h6.5c-.1 1.1-.8 2.7-2.4 3.8l3.7 2.9c2.2-2.1 3.7-5.1 3.7-8.6z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.7-2.9c-1 .7-2.4 1.2-4.2 1.2-3.2 0-5.9-2.1-6.8-5.1L1.3 17.2C3.3 21.2 7.3 24 12 24z"/><path fill="#FBBC05" d="M5.2 14.3c-.2-.7-.4-1.5-.4-2.3s.1-1.6.4-2.3L1.3 6.8C.5 8.4 0 10.1 0 12s.5 3.6 1.3 5.2l3.9-2.9z"/><path fill="#EA4335" d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.3-3.2C17.9 1.1 15.2 0 12 0 7.3 0 3.3 2.8 1.3 6.8l3.9 2.9c.9-2.9 3.6-5 6.8-5z"/></svg>
+        5,0 de 5 · Avaliação no Google
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO / MAPA -->
+<section id="contato" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Onde estamos</span>
+      <h2>Visite a clínica em Gravataí</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="map-box reveal">
+        <iframe title="Mapa — VM Beauty Clinic" src="https://www.google.com/maps?q=VM+Beauty+Clinic,+R.+S%C3%A3o+Crist%C3%B3v%C3%A3o,+498+-+Sala+206,+Vera+Cruz,+Gravata%C3%AD+-+RS&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <div class="info-card reveal">
+        <h2>Agende sua <em>avaliação</em></h2>
+        <div class="info-row">
+          <div class="ic">📍</div>
+          <div><b>Endereço</b><span>R. São Cristóvão, 498 — Sala 206<br>Vera Cruz, Gravataí — RS, 94090-320</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📱</div>
+          <div><b>WhatsApp / Telefone</b><span><a href="https://wa.me/555199400677" target="_blank" rel="noopener" style="color:#fff">(51) 99400-0677</a></span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">🕐</div>
+          <div style="flex:1"><b>Horário de funcionamento</b>
+            <div class="hours-table">
+              <div><span>Segunda a sexta</span><span>09:00 – 20:00</span></div>
+              <div><span>Sábado</span><span>09:00 – 12:00</span></div>
+              <div class="closed"><span>Domingo</span><span>Fechado</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📸</div>
+          <div><b>Instagram</b><span><a href="https://www.instagram.com/clinicavanessamacarthy" target="_blank" rel="noopener" style="color:#fff">@clinicavanessamacarthy</a></span></div>
+        </div>
+        <a href="https://wa.me/555199400677?text=Ol%C3%A1%2C%20Dra.%20Vanessa!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-white" style="margin-top:22px;justify-content:center">Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Sua beleza merece um cuidado especialista</h2>
+      <p>Agende sua avaliação e descubra o protocolo ideal para você. Rejuvenescimento com naturalidade.</p>
+      <a href="https://wa.me/555199400677?text=Ol%C3%A1%2C%20Dra.%20Vanessa!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-white">Agendar agora ✦</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <a href="#inicio" class="logo">Vanessa <span style="color:var(--rose)">Macarthy</span></a>
+    <p>Biomédica Esteta · Rejuvenescimento Facial<br>R. São Cristóvão, 498, Sl 206 · Gravataí — RS</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/clinicavanessamacarthy" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://wa.me/555199400677" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg>
+      </a>
+      <a href="https://www.google.com/maps/place/VM+Beauty+Clinic/@-29.9324137,-51.0478493,17z" target="_blank" rel="noopener" aria-label="Google Maps">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      </a>
+    </div>
+    <div class="copy">© 2026 VM Beauty Clinic · Dra. Vanessa Macarthy · Todos os direitos reservados</div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/555199400677?text=Ol%C3%A1%2C%20Dra.%20Vanessa!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" class="wa-float" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+// Navbar scroll
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+// Menu mobile
+const ham = document.getElementById('hamburger');
+const links = document.getElementById('navLinks');
+ham.addEventListener('click', () => { ham.classList.toggle('open'); links.classList.toggle('open'); });
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); links.classList.remove('open'); }));
+
+// Reveal on scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
